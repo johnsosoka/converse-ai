@@ -1,0 +1,10 @@
+openAI:
+  api_key: "<your_api_key>"
+  engine: "text-davinci-003"
+  max_tokens: 100
+  temperature: 0.7
+
+elevenLabs:
+  api_key: "<your_api_key>"
+  model: "eleven_multilingual_v1"
+  voice: "bababa 1"
