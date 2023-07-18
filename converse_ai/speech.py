@@ -19,3 +19,6 @@ def text_to_speech(text, elevenlabs_config):
         model=elevenlabs_config.get('model')
     )
     play(audio)
+
+
+
