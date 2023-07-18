@@ -1,0 +1,10 @@
+openAI:
+  api_key: YOUR_OPENAI_API_KEY
+  engine: text-davinci-003
+  max_tokens: 50
+  temperature: 0.7
+elevenLabs:
+  api_key: YOUR_ELEVENLABS_API_KEY
+  voice: YOUR_PREFERRED_VOICE
+  model: YOUR_PREFERRED_MODEL
+log_level: INFO
