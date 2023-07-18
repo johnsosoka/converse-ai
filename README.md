@@ -47,7 +47,8 @@ After installing and configuring Converse AI, you can start it with the followin
 converse-ai
 ```
 
-The assistant will start and greet you with "Hello, I am your assistant. How can I help you?". You can then start speaking to the assistant.
+The assistant will start and greet you with "Hello, I am your assistant. How can I help you?". It will then listen for
+you to say something and respond audibly to your question. This will continue until you exit the program.
 
 ## Testing
 
