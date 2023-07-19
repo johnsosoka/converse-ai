@@ -1,27 +1,38 @@
 # Converse AI
 
-Converse AI allows you to have a spoken conversation with an AI assistant. It uses the [OpenAI API](https://beta.openai.com/) 
-to generate responses to your questions, and the [ElevenLabs API](https://www.eleven-labs.com/) to convert the responses to speech.
+Converse AI is a novelty application that enables users to engage in spoken conversations with an AI assistant. It 
+leverages the power of the [OpenAI API](https://beta.openai.com/) to generate intelligent responses to user queries and 
+employs the [ElevenLabs API](https://www.eleven-labs.com/) to convert these responses into speech.
 
-## Pre-requisites
+Once installed, a conversation can be initiated with a single command, `converse-ai`. The assistant will then greet, starting
+your first spoken conversation with an artificial intelligence.
 
-You must have valid API keys for both OpenAI and ElevenLabs. You can get the OpenAI API key from the 
-[OpenAI website](https://beta.openai.com/signup/), and the ElevenLabs API key from the [ElevenLabs website](https://www.eleven-labs.com/).
+## Prerequisites
+
+To utilize Converse AI, you must possess valid API keys for both OpenAI and ElevenLabs. You can acquire the OpenAI API 
+key from the [OpenAI website](https://beta.openai.com/signup/), and the ElevenLabs API key from the [ElevenLabs website](https://www.eleven-labs.com/).
 
 ## Installation
 
-To install Converse AI, you need to have Python 3.6 or later. You can install the project with pip:
+### From Repository
 
-```bash
-pip install -r requirements.txt
-```
+1. Clone the repository:
 
-This command will install the project and its dependencies, and it will create a `.converse-ai` directory in your home directory with a `config.yml` file.
+    ```bash
+    git clone git@github.com:johnsosoka/converse-ai.git
+   ```
+2. Navigate to the root directory of the project in your terminal.
+3. Execute the following command:
 
-## Configuration
+    ```bash
+    python3 setup.py install
+    ```
 
-Before you can use Converse AI, you need to configure it. Open the `config.yml` file in the `.converse-ai` directory and replace the placeholders with your actual API keys and preferences:
+### Configuration
 
+During the installation process, a `.converse-ai` directory will be created in your home directory, containing a `config.yml` file. You must edit this file and add your API keys before you can use Converse AI.
+
+**Example:**
 ```yaml
 openAI:
   api_key: YOUR_OPENAI_API_KEY
@@ -30,12 +41,10 @@ openAI:
   temperature: 0.7
 elevenLabs:
   api_key: YOUR_ELEVENLABS_API_KEY
-  voice: YOUR_PREFERRED_VOICE
-  model: YOUR_PREFERRED_MODEL
+  voice: Adam
+  model: eleven_monolingual_v1
 log_level: INFO
 ```
-
-You can get the OpenAI API key from the [OpenAI website](https://beta.openai.com/signup/), and the ElevenLabs API key from the [ElevenLabs website](https://www.eleven-labs.com/). The `voice` and `model` parameters are specific to ElevenLabs and you can find more information about them in the ElevenLabs documentation.
 
 The `log_level` can be set to any valid logging level from the Python `logging` module, such as `DEBUG`, `INFO`, `WARNING`, `ERROR`, or `CRITICAL`. The default value is `INFO`.
 
@@ -47,12 +56,30 @@ After installing and configuring Converse AI, you can start it with the followin
 converse-ai
 ```
 
-The assistant will start and greet you with "Hello, I am your assistant. How can I help you?". It will then listen for
-you to say something and respond audibly to your question. This will continue until you exit the program.
+The assistant will initiate the conversation with "Hello, I am your assistant. How can I help you?". It will then listen for your input and respond audibly to your question. This process will continue until you exit the program.
+
+## Development
+
+To set up a development environment for Converse AI, follow these steps:
+
+1. Clone the repository:
+
+    ```bash
+    git clone git@github.com:johnsosoka/converse-ai.git
+    ```
+2. Navigate to the root directory of the project in your terminal.
+3. Install the required dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Make your changes to the code. Remember to follow the existing code style and add comments where necessary.
+5. Test your changes (see the Testing section below).
+6. Submit a pull request with your changes.
 
 ## Testing
 
-Converse AI comes with a suite of unit tests. You can run them with the following command:
+Converse AI includes a suite of unit tests to ensure its functionality. You can run these tests with the following command:
 
 ```bash
 python -m unittest discover
@@ -62,8 +89,12 @@ This command will discover and run all test cases in the project.
 
 ## Contributing
 
-If you want to contribute to Converse AI, feel free to fork the repository and submit a pull request.
+Contributions to Converse AI are always welcome. If you're interested in contributing, please fork the repository and submit a pull request with your changes.
 
 ## License
 
-Converse AI is licensed under the GPL-2.0 license. See the `LICENSE` file for more details.
+Converse AI is licensed under the GPL-2.0 license. For more details, please see the `LICENSE` file.
+
+## Contact
+
+For any queries or further information, please [contact]( https://johnsosoka.com/contact) the author:

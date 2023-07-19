@@ -33,11 +33,11 @@ def main_loop():
     text_to_speech("Hello, I am your assistant. How can I help you?", elevenlabs_config)
 
     while True:
-        logger.info("Listening for speech...")
+        logger.debug("Listening for speech...")
         prompt = recognize_speech(r, openai_config, logger)
-        logger.info("identified speech: " + prompt)
+        logger.debug("identified speech: " + prompt)
         if prompt is None or prompt == "":
-            logger.info("No text, skipping AI call.")
+            logger.debug("No text, skipping AI call.")
             continue
         open_ai_response = fetch_openai_response(prompt, openai_config, conversation, logger)
         text_to_speech(open_ai_response, elevenlabs_config)

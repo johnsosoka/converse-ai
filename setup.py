@@ -1,6 +1,20 @@
+"""
+setup.py
+
+This module provides the setup configuration for the Converse AI application.
+It includes a custom setup command to create a .converse-ai directory and copy a starter config.yml file.
+The setup configuration also includes the application's metadata and dependencies.
+
+Author: John Sosoka
+Date: 2023-07-18
+Email: code@johnsosoka.com
+"""
+
+
 import os
 import shutil
 from setuptools import setup, find_packages, Command
+from setuptools.command.install import install
 
 class SetupConfigCommand(Command):
     description = 'create a .converse-ai directory and copy a starter config.yml'
@@ -20,6 +34,12 @@ class SetupConfigCommand(Command):
         config_file = os.path.join(converse_dir, 'config.yml')
         if not os.path.exists(config_file):
             shutil.copyfile('./template/config_template.yml', config_file)
+        print("A new config file has been created at {}. Please update the keys in this file.".format(config_file))
+
+class InstallCommand(install):
+    def run(self):
+        self.run_command('setup_config')
+        super().run()
 
 setup(
     name='converse-ai',
@@ -31,7 +51,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'pyyaml',
-        'speech_recognition',
+        'SpeechRecognition',
         'openai',
         'elevenlabs'
     ],
@@ -42,5 +62,6 @@ setup(
     },
     cmdclass={
         'setup_config': SetupConfigCommand,
+        'install': InstallCommand,
     },
 )

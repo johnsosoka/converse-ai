@@ -1,6 +1,28 @@
+"""
+openai_chat.py
+
+This module provides a function to fetch a response from OpenAI's GPT-3 model.
+
+Author: John Sosoka
+Date: 2023-07-18
+Email: code@johnsosoka.com
+"""
+
 import openai
 
 def fetch_openai_response(prompt, openai_config, conversation, logger):
+    """
+    Fetches a response from OpenAI's GPT-3 model based on a given prompt and conversation history.
+
+    Args:
+        prompt (str): The prompt to send to the GPT-3 model.
+        openai_config (dict): The configuration for the OpenAI API.
+        conversation (list): The conversation history.
+        logger (logging.Logger): The logger to use for logging information.
+
+    Returns:
+        str: The response from the GPT-3 model.
+    """
     logger.info("Fetching response for: " + prompt)
     conversation.append({'role': 'user', 'content': prompt})
     logger.info(conversation)
